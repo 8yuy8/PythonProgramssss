@@ -14,14 +14,14 @@ print("Type a system you want to convert at: ")
 newSystem = input()
 
 if int(oldSystem) > 106 or int(oldSystem) < 2 or int(newSystem) < 2 or int(newSystem) > 106:
-    print("Podaj poprawny system liczbowy od 0 do 106 :)")
+    print("Please, type a valid system from 0 to",len(allCharsList)-2,":)")
     exit
 if textToCipher[0] == 0:
-    print("Liczba nie może zaczynać się od 0 :)")
+    print("The number can't begin from 0 :)")
     exit
 
-sysInfoList = ["binarnym", "trialnym", "kwartalnym", "pentalnym", "hexalnym", "heptalnym", "oktalnym", "nanonalnym",
-               "decynalnym", "wigintalnym"  "trigintalnym", "tetragintalnym", "pentagintalnym", "hexagintalnym", "septagintalnym", "oktagintalnym", "nanogintalnym", "centagintalnym",
+sysInfoList = ["binarny", "trialny", "kwartalny", "pentalny", "hexalny", "heptalny", "oktalny", "nanonalny",
+               "decynalny", "wigintalny"  "trigintalny", "tetragintalny", "pentagintalny", "hexagintalny", "septagintalny", "oktagintalny", "nanogintalny", "centagintalny",
                "un", "duo", "tri", "tetra", "penta", "hexa", "septa", "okta", "nano"]
 
 sysInfo = ""
@@ -36,13 +36,13 @@ if int(newSystem) >= 10 and int(newSystem) < 100:
     m = int(mm)
     if m != 0:
         sysInfo =sysInfoList[m+16]
-    sysInfo += sysInfoList[n+7]
+    sysInfo += sysInfoList[n+6]
 if int(newSystem) >= 100:
     mm = newSystem[2]
     m = int(mm)
     if m != 0:
         sysInfo =sysInfoList[m+16]
-    sysInfo+="centaginatlnym"
+    sysInfo+="centaginatlny"
 
 textToCipherList = []
 i = 0
@@ -109,6 +109,6 @@ while i < len(convertedNumber):
     i += 1
 
 
-print("Liczba w systemie dziesiętnym: ", decimalValue)
+print("Number in decimal system: ", decimalValue)
 
-print("Liczba w systemie",sysInfo,"wynosi:",number)
+print("Number in",sysInfo,"system equals:",number)
